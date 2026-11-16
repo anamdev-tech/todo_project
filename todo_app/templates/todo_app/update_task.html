@@ -1,0 +1,13 @@
+{% extends 'todo_app/base.html' %}
+
+{% block content %}
+<h4 class="mb-3">টাস্ক এডিট করুন</h4>
+<form method="POST">
+    {% csrf_token %}
+    <div class="mb-3">
+        <input type="text" name="title" class="form-control" value="{{ task.title }}" required>
+    </div>
+    <button type="submit" class="btn btn-success">Update</button>
+    <a href="{% url 'task_list' %}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}
